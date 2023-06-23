@@ -8,22 +8,24 @@
 void swap_ints(int *a, int *b)
 {
 	int tmp;
-	
+
 	tmp = *a;
 	*a = *b;
 	*b = tmp;
 }
 /**
  * partition - ...
+ * @size: ...
  * @array: ...
  * @low: ...
  * @high: ...
+ * Return: ...
  */
 size_t partition(int *array, size_t size, int low, int high)
 {
 	int i, j;
 	int *pivot;
-	
+
 	pivot = array + high;
 	for (i = j = low; j < high; j++)
 	{
@@ -40,28 +42,30 @@ size_t partition(int *array, size_t size, int low, int high)
 	if (array[i] > *pivot)
 	{
 		swap_ints(array + i, pivot);
-        	print_array(array, size);
+		print_array(array, size);
 	}
 	return (i);
-}	
+}
 /**
  * quick_sortrec - ...
  * @array: ...
+ * @size: ...
  * @low: ...
  * @high: ...
  */
 void quick_sortrec(int *array, size_t size, int low, int high)
 {
 	int pi;
+
 	if (low < high)
 	{
 		pi = partition(array, size, low, high);
 		quick_sortrec(array, size, low, pi - 1);
-        	quick_sortrec(array, size, pi + 1, high);
+		quick_sortrec(array, size, pi + 1, high);
 	}
 }
 /**
- * quick_sortrec - ...
+ * quick_sort - ...
  * @array: ...
  * @size: ...
  */

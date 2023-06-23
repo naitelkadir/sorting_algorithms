@@ -2,7 +2,7 @@
 
 /**
  * bubble_sort - sorts any array of integers
- * @array: the array to list 
+ * @array: ...
  * @size: the size of the array to sort
  */
 void bubble_sort(int *array, size_t size)
