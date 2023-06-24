@@ -9,7 +9,7 @@
 void swap_nodes_forward(listint_t **list, listint_t **tail, listint_t **n1)
 {
 	listint_t *tmp = (*n1)->next;
-	
+
 	if ((*n1)->prev != NULL)
 	{
 		(*n1)->prev->next = tmp;
@@ -41,6 +41,7 @@ void swap_nodes_forward(listint_t **list, listint_t **tail, listint_t **n1)
 void swap_nodes_backward(listint_t **list, listint_t **tail, listint_t **n1)
 {
 	listint_t *tmp = (*n1)->prev;
+
 	if ((*n1)->next != NULL)
 	{
 		(*n1)->next->prev = tmp;
@@ -72,7 +73,7 @@ void cocktail_sort_list(listint_t **list)
 {
 	listint_t *tail, *n1;
 	bool swapped = false;
-	
+
 	if (list == NULL || *list == NULL || (*list)->next == NULL)
 	{
 		return;
